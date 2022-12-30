@@ -1,0 +1,497 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+
+:root {
+    --normal-font-size: 1.3rem;
+    --thumbnails-size: 200px;
+    --all-screen-height: 100vh;
+    --filters-font-size: 0.9rem;
+    --active-pagination-color: yellow;
+    --hover-pagination-color: rgba(255, 255, 167, 0.5);
+}
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: #961edb;
+    font-family: sans-serif;
+    font-size: var(--normal-font-size);
+    overflow-y: hidden;
+    /* display: flex; */
+    /* align-items: stretch; */
+    box-sizing: border-box;
+}
+
+.body {
+    /* Se anaden despues de chakra-ui */
+    min-height: var(--all-screen-height);
+    height: var(--all-screen-height);
+    max-height: var(--all-screen-height) !important;
+    background-color: #961edb;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+#root {
+    cursor: default;
+    height: var(--all-screen-height);
+    max-height: var(--all-screen-height);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.main-button {
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.home-button {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    font-size: 1.2rem;
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+        0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+    opacity: 0.9;
+    margin: 5px;
+}
+
+.normal-button {
+    border: none;
+    appearance: none;
+
+    box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+        0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.filter-button {
+    border: none;
+    transition: all ease-in 0.1s;
+    cursor: pointer;
+}
+
+.margin-top-0 {
+    margin-top: 0 !important;
+}
+
+* {
+    min-height: 0 !important;
+    max-height: 100%;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.rel-pos-left {
+    position: absolute;
+    left: 0;
+    z-index: 99;
+}
+
+.ul-actividades {
+    min-height: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+#div-actividades {
+    max-height: none;
+}
+
+#div-actividades * {
+    max-height: none;
+    min-height: fit-content !important;
+}
+
+#grupos-filtros * {
+    min-height: fit-content !important;
+    max-height: none !important;
+}
+
+.increasing-size-button:enabled {
+    transition: all ease-in 0.1s;
+}
+
+.increasing-size-button:hover:enabled {
+    transform: scale(1.10);
+    opacity: 1;
+}
+
+.no-bullet {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    height: fit-content;
+    width: fit-content;
+}
+
+a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+
+
+input,
+select,
+option,
+textarea {
+    font-size: var(--normal-font-size);
+}
+
+
+input,
+select,
+textarea,
+.color-black {
+    color: black
+}
+
+.breadcrum {
+    font-size: small;
+    color: rgb(209, 209, 209);
+    padding: 0;
+    display: flex;
+}
+
+
+.breadcrum p {
+    margin: 5px;
+}
+
+.underline-on-hover:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.notify {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    z-index: 1;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.usuario-not-opened:hover {
+    color: yellow;
+}
+
+.padding-y-10px {
+    padding: 10px 0;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.ant-pagination {
+    display: flex;
+}
+
+.ant-pagination>li {
+    list-style: none;
+    border: rgba(255, 255, 255, 0.3) solid 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 12px;
+    font-weight: bold;
+    max-height: 40px;
+}
+
+.ant-pagination-prev {
+    padding: 0 6px 0 4px !important;
+
+}
+
+.ant-pagination-item {
+    cursor: pointer;
+}
+
+.ant-pagination-prev,
+.ant-pagination-next {
+    opacity: 1;
+    transition: opacity ease-in 0.5s;
+}
+
+.ant-pagination-item:hover,
+.ant-pagination-prev:hover,
+.ant-pagination-next:hover {
+    border: var(--hover-pagination-color) solid 2px !important;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ant-pagination-next {
+    padding: 0 4px 0 6px !important;
+
+}
+
+.ant-pagination-disabled {
+    opacity: 0.05;
+    transition: opacity ease-in 0.5s;
+}
+
+.ant-pagination-disabled * {
+    cursor: default !important;
+}
+
+.ant-pagination-item-active,
+.ant-pagination-item-active:hover {
+    color: var(--active-pagination-color);
+    border: var(--active-pagination-color) solid 2px !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.page-size-setter {
+    margin-left: 60px;
+    user-select: none;
+}
+
+.page-size-setter>input {
+    width: 36px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.actividad-opened {
+    border-radius: 4px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.usuario-opened {
+    border-radius: 4px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.lista-participantes {
+    margin-block-start: 0
+}
+
+textarea {
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+}
+
+.green {
+    background-color: rgb(4, 224, 4);
+    color: black
+}
+
+.red {
+    background-color: rgb(252, 85, 39);
+    color: black
+}
+
+.red:hover:enabled {
+    background-color: rgb(230, 3, 3);
+    color: black
+}
+
+.green:hover:enabled {
+    background-color: rgb(3, 168, 3);
+    color: black
+}
+
+.font-size-24 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.image-deletable-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+.description-input {
+    width: 80%;
+    min-height: 80px;
+}
+
+.thumbnail-view {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.thumbnail-view:hover {
+    border: 1px solid #ddd;
+}
+
+.thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.thumbnail,
+.thumbnail-view,
+.thumbnail-sized {
+    width: var(--thumbnails-size);
+}
+
+
+/* Add a hover effect (blue shadow) */
+.thumbnail:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(var(--thumbnails-size)*2);
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    right: 0;
+}
+
+.delete-image-button {
+    padding: 10px;
+    background-color: #FF0000;
+
+}
+
+.delete-image-button:hover {
+    background-color: #FF4444;
+}
+
+.small-padding {
+    padding: 5px;
+}
+
+.checkbox-filter,
+.label-checkbox-filter {
+    margin: 0;
+    padding: 0;
+    font-size: var(--filters-font-size);
+    cursor: pointer;
+}
+
+.checkbox-filter {
+    position: relative;
+    top: 2px;
+}
+
+.py-2px {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.label-checkbox-filter {
+    margin-left: 0.5rem;
+}
+
+.select-filter-by-user {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: var(--filters-font-size);
+}
+
+.select-filter-by-user option {
+    font-size: var(--filters-font-size);
+}
+
+.no-select {
+    user-select: none
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.status-tag {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+#new-project-widget * {
+    min-height: max-content !important;
+}
+
+#projects-list-widget {
+    min-height: 60% !important;
+}
+
+#projects-list-widget * {
+    min-height: auto !important;
+}
+
+.projects-admin {
+    min-height: auto !important;
+}
+
+.search-filter {
+    font-size: var(--filters-font-size);
+}
+
+.highlighted {
+    background-color: orange;
+}

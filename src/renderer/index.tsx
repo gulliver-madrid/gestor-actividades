@@ -1,5 +1,5 @@
-import "./index.css";
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
+import App from './App';
 
 /**
  * This file will automatically be loaded by webpack and run in the "renderer" context.
@@ -13,22 +13,12 @@ import { createRoot } from "react-dom/client";
  * more about security risks here:
  *
  * https://electronjs.org/docs/tutorial/security
- *
- * To enable Node.js integration in this file, open up `main.js` and enable the `nodeIntegration`
- * flag:
- *
- * ```
- *  // Create the browser window.
- *  mainWindow = new BrowserWindow({
- *    width: 800,
- *    height: 600,
- *    webPreferences: {
- *      nodeIntegration: true
- *    }
- *  });
  * ```
  */
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
+if (!container) {
+    throw new Error('root element is missing');
+}
 const root = createRoot(container);
-root.render(<h1>Gestor de Actividades</h1>);
+root.render(<App />);

@@ -87,3 +87,8 @@ typings/
 
 # Electron-Forge
 out/
+
+no_git/
+
+# Python compiled files
+**/*.pyc
