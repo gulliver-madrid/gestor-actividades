@@ -1,0 +1,14 @@
+{
+    "name": "gestor-actividades",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gulliver-madrid/gestor-actividades.git"
+    },
+    "license": "GPL-3.0-only",
+    "author": {
+        "name": "gulliver-madrid",
+        "email": "49131885+gulliver-madrid@users.noreply.github.com",
+        "url": "https://github.com/gulliver-madrid"
+    }
+}
